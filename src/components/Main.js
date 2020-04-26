@@ -7,19 +7,21 @@ import {ReactComponent as ProjectsIcon} from '../assets/project-diagram-solid.sv
 import {ReactComponent as SiteLinkIcon} from '../assets/link-solid.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-brands.svg';
 
-const Main = () => {
+const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}) => {
   const [showAllWork, setShowAllWork] = useState(false);
+  
+
 
   return (
     <>
-      <div className="about-me">
+      <div className="about-me" ref={aboutLink}>
         <h4><AboutMeIcon /> about me</h4>
         <h5>Hi! My name is Leon, and I'm a full-stack web developer specializing in Javascript with React and NodeJS.</h5>
         <p>I find myself most proud when I am able to solve a challenging problem. I am confident knowing that I can look at a question from all sides and execute the best solution.</p>
         <p>I have years of experience with coding and web design. I was the administrator, designer, and coder for small, hobby websites in the past. I taught myself how to manage a community and all of its coding needs, including quick solutions when problems arise. Now, I am utilizing JavaScript to develop web applications. I am hoping to work on a team with great programmers.</p>
         <p>My biggest passions are designing and creating games; I am always eager to piece together all types - board games, pen and paper, and internet games alike - to test my creativity. My other outlets are writing stories and staying healthy!</p>
       </div>
-      <div className="experience">
+      <div className="experience" ref={experiencesLink}>
       <h4><ExperiencesIcon /> experience</h4>
         <ul className="experience-list">
           {experiences.map((experience,i) => {
@@ -55,7 +57,7 @@ const Main = () => {
           }
         </ul>
       </div>
-      <div className="skills">
+      <div className="skills" ref={skillsLink}>
         <h4><SkillsIcon /> skills</h4>
         {skills.map(skillStack => {
           return(
@@ -69,7 +71,7 @@ const Main = () => {
             </>
           )})}
       </div>
-      <div className="projects">
+      <div className="projects" ref={projectsLink}>
         <h4><ProjectsIcon /> projects</h4>
         <ul className="project-list">
           {projects.map(project => (

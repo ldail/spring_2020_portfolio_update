@@ -1,3 +1,8 @@
+import {ReactComponent as AboutMeIcon} from '../assets/address-card-regular.svg';
+import {ReactComponent as ExperiencesIcon} from '../assets/briefcase-solid.svg';
+import {ReactComponent as SkillsIcon} from '../assets/tools-solid.svg';
+import {ReactComponent as ProjectsIcon} from '../assets/project-diagram-solid.svg';
+
 export const projects = [
   {
     name: 'Now Playing',
@@ -86,3 +91,22 @@ export const experiences = [
     ]
   }
 ];
+
+export const headerIcons = [
+  {
+    name: `about`,
+    icon: AboutMeIcon,
+  },
+  {
+    name: `experiences`,
+    icon: ExperiencesIcon,
+  },
+  {
+    name: `skills`,
+    icon: SkillsIcon
+  },
+  {
+    name: `projects`,
+    icon: ProjectsIcon
+  }
+]

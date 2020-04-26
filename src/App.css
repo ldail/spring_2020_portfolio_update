@@ -41,6 +41,17 @@ ul {
   align-items: center;
 }
 
+.headerExpanded {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.headerExpanded * {
+  width: 25px;
+  height: 25px;
+}
+
 #InitialSplash .headshot-container {
   height: 50vh;
   width: 100%;
