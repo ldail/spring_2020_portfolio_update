@@ -1,0 +1,238 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+}
+
+@font-face{ 
+	font-family: 'StoryBook';
+	src: url('./assets/fonts/StoryBook/StoryBook.eot');
+	src: url('./assets/fonts/StoryBook/StoryBook.eot?#iefix') format('embedded-opentype'),
+	     url('./assets/fonts/StoryBook/StoryBook.woff') format('woff'),
+	     url('./assets/fonts/StoryBook/StoryBook.ttf') format('truetype'),
+	     url('./assets/fonts/StoryBook/StoryBook.svg#StoryBook') format('svg');
+}
+
+.App {
+  background-color: black;
+  color: #E1E1E1;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+* {
+  transition: .3s all;
+}
+
+ul {
+  list-style: none;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+}
+
+.headerExpanded {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.header-expanded-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.header-expanded-icon:hover {
+  color: #ff8a00;
+}
+
+.headedContracted {
+  font-family: 'StoryBook', sans-serif;
+  color: #ff8a00;
+  font-size: 15px;
+}
+
+#InitialSplash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#InitialSplash h1 {
+  height: 90px; 
+  font-family: 'StoryBook', sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: #ff8a00;
+  background-image: linear-gradient(to right, #ff8a00 0%, #da1b60 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  overflow: visible;
+}
+
+#InitialSplash h2 {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#InitialSplash .headshot-container {
+  height: 50vh;
+  width: 80%;
+}
+
+#InitialSplash .headshot {
+  width: 80vw;
+  border-radius: 50%;
+}
+
+#InitialSplash .splash-info {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+
+.splash-info h3 {
+  position: absolute;
+  bottom: 25vh;
+  width: 100%;
+  font-size: 15px;
+  color: #ff8a00;
+  background-image: linear-gradient(to right, #ff8a00 0%, #da1b60 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.splash-info h3 span {
+  z-index: 2;
+  position: relative;
+}
+
+.umbrellaIcon {
+  position: absolute;
+  bottom: 00px;
+  right: 15px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  transform: rotate(10deg);
+}
+
+.contact-link-list {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 15vh;
+  width: 100%;
+}
+
+.contact-link-list li {
+  width: 100%;
+}
+
+.contact-link-list svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.info-section:not(:first-child) {
+  margin-top: 60px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.section-header .headerIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+.about-me h5 {
+  text-align: left;
+}
+
+.projects p {
+  font-size: 13px;
+  line-height: 17px;
+}
+.project-list h5 {
+  text-align: left;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.screenshot-container {
+  width: 80vw;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.screenshot-container img {
+  margin-top: -50px;
+  overflow: hidden;
+}
+
+.project-list {
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
+
+.project-links-list {
+  display: flex;
+}
+
+.project-link-item .external-link {
+  width: 20px;
+  height: 20px;
+  color: white;
+  margin-right: 20px;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-tech-list .project-tech-item {
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 7px;
+  text-transform: lowercase;
+}
