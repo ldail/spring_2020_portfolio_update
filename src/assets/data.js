@@ -6,6 +6,10 @@ import elInstrumentoScreenshot from '../assets/ElInstrumento-screenshot.png';
 import directMeScreenshot from '../assets/DirectMe-screenshot.png';
 import ultimateClothingSceenshot from '../assets/UltimateClothing-screenshot.png';
 import nowPlayingScreenshot from '../assets/NowPlayingLive-screenshot.png';
+import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
+import kituSystemsIcon from '../assets/kitu-systems-icon.png';
+import thinkfulIcon from '../assets/thinkful-icon.jpg'
+import weathervaneIcon from '../assets/weathervane-icon.png';
 
 export const projects = [
   {
@@ -45,34 +49,102 @@ export const projects = [
 export const skills = [
   {
     title: `Front-end`,
-    skills: [`Javascript`, `ReactJS`, `Redux`, `SCSS`, `jQuery`, `CSS3`, `HTML5`, `Enzyme`]
+    skills: [
+      {
+        name: `Web Design & Development`,
+        description: `Semantic & Accessible HTML5, CSS3 and SCSS, JavaScript`,
+        icon: LinkArrow
+      },
+      {
+        name: `React`,
+        description: `React Classes, Hooks, Contect API`,
+        icon: LinkArrow
+      },
+      {
+        name: `Redux`,
+        description: `React with Redux State Management`,
+        icon: LinkArrow
+      },
+      {
+        name: `jQuery`,
+        description: `JavaScript library`,
+        icon: LinkArrow
+      },
+      {
+        name: `Enzyme`,
+        description: `Unit Testing`,
+        icon: LinkArrow
+      }
+    ]
   },
   {
     title: `Back-end`,
-    skills: [`Node.js`, `Express`, `PostreSQL`, `Mocha`, `Chai`, `RESTful APIs`]
+    skills: [
+      {
+        name: `Node.js`,
+        description: `Back-end JavaScript Development`,
+        icon: LinkArrow
+      },
+      {
+        name: `Express.js`,
+        description: `Node.js framework`,
+        icon: LinkArrow
+      },
+      {
+        name: `Relational Databases`,
+        description: `PostgreSQL & MySQL with RESTful APIs`,
+        icon: LinkArrow
+      },
+      {
+        name: `Mocha & Chai`,
+        description: `Unit & Integration Testing`,
+        icon: LinkArrow
+      }
+    ]
   },
   {
     title: `Other`,
-    skills: [`Git/GitHub`, `Photoshop`, `Heroku`, `Zeit/Now`, `Testing`, `NPM`, `Dev Tools`]
+    skills: [
+      {
+        name: `Flow Control and Production Environment`,
+        description: `Git, GitHub, BitBucket, Jira`,
+        icon: LinkArrow
+      },
+      {
+        name: `Deployment`,
+        description: `Heroku, Zeit, GitHub Pages`,
+        icon: LinkArrow
+      },
+      {
+        name: `Design with Adobe Photoshop`,
+        description: `Website mock-ups and editing`,
+        icon: LinkArrow
+      },
+      {
+        name: `Developer Tools and Packages`,
+        description: `Browser DevTools and NPM`,
+        icon: LinkArrow
+      }
+    ]
   }
 ];
 
 export const experiences = [
   {
     name: `Kitu Systems, Inc.`,
-    icon: `http://#.com`,
+    icon: kituSystemsIcon,
     link: `https://kitu.io`,
-    startDate: `March 2020`,
+    startDate: `Mar '20`,
     endDate: `Present`,
     role: `Software Engineer Intern`,
     tasks: [`Worked hard`, `Frontend stuff`]
   },
   {
     name: `Thinkful, Inc.`,
-    icon: `http://#.com`,
+    icon: thinkfulIcon,
     link: `https://thinkful.com`,
-    startDate: `June 2019`,
-    endDate: `January 2020`,
+    startDate: `Jun '19`,
+    endDate: `Jan '20`,
     role : `Student/Intern`,
     tasks: [
       `Learned industry-best practices for software development`,
@@ -84,9 +156,9 @@ export const experiences = [
   },
   {
     name: `Weathervane Restaurant`,
-    icon: `http://#.com`,
-    startDate: `August 2016`,
-    endDate: `January 2019`,
+    icon: weathervaneIcon,
+    startDate: `Aug '16`,
+    endDate: `Jan '19`,
     role: `Event Coordinator Lead, Trainer, Bartender, Server`,
     tasks: [
       `Directed and trained others in following best methods for high-stakes special events`,
@@ -114,3 +186,7 @@ export const headerIcons = [
     icon: ProjectsIcon
   }
 ]
+
+export const GITHUB_LINK = `https://github.com/ldail`;
+export const LINKEDIN_LINK = `https://linkedin.com/in/ldail`;
+export const EMAIL_LINK = `mailto:leondailofficial@gmail.com`;

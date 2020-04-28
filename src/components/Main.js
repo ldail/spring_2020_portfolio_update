@@ -6,6 +6,8 @@ import {ReactComponent as SkillsIcon} from '../assets/tools-solid.svg';
 import {ReactComponent as ProjectsIcon} from '../assets/project-diagram-solid.svg';
 import {ReactComponent as SiteLinkIcon} from '../assets/link-solid.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-brands.svg';
+import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
+
 
 const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}) => {
   const [showAllWork, setShowAllWork] = useState(false);
@@ -21,26 +23,28 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
         <p>I have years of experience with coding and web design. I was the administrator, designer, and coder for small, hobby websites in the past. I taught myself how to manage a community and all of its coding needs, including quick solutions when problems arise. Now, I am utilizing JavaScript to develop web applications. I am hoping to work on a team with great programmers.</p>
         <p>My biggest passions are designing and creating games; I am always eager to piece together all types - board games, pen and paper, and internet games alike - to test my creativity. My other outlets are writing stories and staying healthy!</p>
       </section>
-      <section className="info-section experience" ref={experiencesLink}>
+      <section className="info-section experiences" ref={experiencesLink}>
       <h4 className="section-header"><ExperiencesIcon className="headerIcon" /> <span>experience</span></h4>
         <ul className="experience-list">
           {experiences.map((experience,i) => {
             if (showAllWork || i < 2) {
               return (
                 <li className="experience-item">
+                  <span className="bullet-bar" />
                   <span className="bullet-icon" />
                   <div className="experience-item-info">
-                    <a href={experience.link}><img src={experience.icon} alt={experience.name} /></a>
-                    <h5>{experience.name}</h5>
-                    <span className="experience-dates">
-                      {experience.startDate} - {experience.endDate}
-                    </span>
+                    <a href={experience.link}><img src={experience.icon} alt={experience.name} className="experience-logo" /></a>
+                    <div className="experience-name"><h5>{experience.name}</h5>
+                      <span className="experience-dates">
+                        {`(${experience.startDate} - ${experience.endDate})`}
+                      </span>
+                    </div>
                     <span className="experience-role">
                       {experience.role}
                     </span>
                     <ul className="experience-tasks">
                       {experience.tasks.map(task => (
-                        <li>{task}</li>
+                        <li className="experience-task">{task}</li>
                       ))}
                     </ul>
                   </div>
@@ -52,7 +56,7 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
             }
           })}
           {!showAllWork
-            ? <button onClick={() => setShowAllWork(true)}>(show more. . .)</button>
+            ? <button onClick={() => setShowAllWork(true)} className="show-more-experiences">(show more. . .)</button>
             : null
           }
         </ul>
@@ -64,8 +68,16 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
             <>
               <h5>{skillStack.title}</h5>
               <ul className="skills-list">
-                {skillStack.skills.map(skill => (
-                  <li>{skill}</li>
+                {skillStack.skills.map((skill,i) => (
+                  <li className="skill" key={i}>
+                    <div className="skills-icon-container">
+                      <skill.icon className="skill-icon" />
+                    </div>
+                    <div className="skill-info">
+                      <span className="skill-title">{skill.name}</span>
+                      <span className="skill-description">{skill.description}</span>
+                    </div>
+                  </li>
                 ))}
               </ul>
             </>
@@ -76,16 +88,19 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
         <ul className="project-list">
           {projects.map(project => (
             <li className="project-list">
-              <div className="screenshot-container">
-                <img src={project.screenshot} alt={project.name} />
+              <div className="screenshot-container-behind">
+                <img src={project.screenshot} alt={project.name} className="screenshotBehind"/>
+              </div>
+              <div className="screenshot-container-original">
+                <a href={project.link} target="_blank" rel='noreferrer noopener'><img src={project.screenshot} alt={project.name} className="screenshotOriginal"/></a>
               </div>
               <h5>{project.name}</h5>
               <ul className="project-links-list">
                 <li className="project-link-item">
-                  <a href={project.link}><SiteLinkIcon className="external-link" /></a>
+                <a href={project.link} target="_blank" rel='noreferrer noopener'><SiteLinkIcon className="external-link" /></a>
                 </li>
                 <li className="project-link-item">
-                  <a href={project.github}><GithubIcon className="external-link"/></a>
+                <a href={project.github} target="_blank" rel='noreferrer noopener'><GithubIcon className="external-link"/></a>
                 </li>
               </ul>
               <p className="project-description">
@@ -97,8 +112,11 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
                     {tech === project.tech[project.tech.length -1]
                       ? tech
                       : tech === project.tech[[0]] 
-                        ? `>  ${tech},`
-                        : `${tech},`
+                        ? <>
+                            <LinkArrow className="tech-arrow" />
+                            <span>{tech},</span>
+                          </>
+                        : <span>{tech},</span>
                     }
                   </li>))}
               </ul>
