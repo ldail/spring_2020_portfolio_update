@@ -26,6 +26,22 @@ html, body {
   padding-right: 30px;
 }
 
+.header {
+  opacity: 0;
+}
+
+#InitialSplash > * {
+  opacity: 0;
+}
+
+.splash-info > * {
+  opacity: 0;
+}
+
+.info-section {
+  opacity: 0;
+}
+
 * {
   transition: .2s all;
 }
@@ -44,6 +60,39 @@ p {
   font-size: 14px;
   line-height: 20px;
   text-align: justify;
+}
+
+/* Animations */
+
+.zero-to-hundred-opacity {
+  animation: forwards zeroToHundredOpacity;
+  animation-duration: 1s;
+  -webkit-animation: 1s forwards zeroToHundredOpacity;
+}
+
+.zero-to-hundred-opacity-slow {
+  animation: forwards zeroToHundredOpacity;
+  animation-duration: 2s;
+  -webkit-animation: 2s forwards zeroToHundredOpacity;
+}
+
+
+@keyframes zeroToHundredOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes zeroToHundredOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1.0;
+  }
 }
 .header {
   position: fixed;

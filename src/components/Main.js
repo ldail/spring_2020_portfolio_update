@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {projects, skills, experiences} from '../assets/data';
 import {ReactComponent as AboutMeIcon} from '../assets/address-card-regular.svg';
 import {ReactComponent as ExperiencesIcon} from '../assets/briefcase-solid.svg';
@@ -11,12 +11,13 @@ import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
 
 const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}) => {
   const [showAllWork, setShowAllWork] = useState(false);
+
   
-
-
   return (
     <>
-      <section className="info-section about-me" ref={aboutLink}>
+      <section 
+        className="info-section about-me" 
+        ref={aboutLink}>
         <h4 className="section-header"><AboutMeIcon className="headerIcon"/> <span>about me</span></h4>
         <h5>Hi! My name is Leon, and I'm a full-stack web developer specializing in Javascript with React and NodeJS.</h5>
         <p>I find myself most proud when I am able to solve a challenging problem. I am confident knowing that I can look at a question from all sides and execute the best solution.</p>
@@ -33,7 +34,7 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
                   <span className="bullet-bar" />
                   <span className="bullet-icon" />
                   <div className="experience-item-info">
-                    <a href={experience.link}><img src={experience.icon} alt={experience.name} className="experience-logo" /></a>
+                    <a href={experience.link} target="_blank" rel="noopener noreferrer"><img src={experience.icon} alt={experience.name} className="experience-logo" /></a>
                     <div className="experience-name"><h5>{experience.name}</h5>
                       <span className="experience-dates">
                         {`(${experience.startDate} - ${experience.endDate})`}
