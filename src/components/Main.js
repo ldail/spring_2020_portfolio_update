@@ -13,6 +13,11 @@ import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
 const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink, resumeLink}}) => {
   const [showAllWork, setShowAllWork] = useState(false);
 
+  useEffect (() => {
+    if (window.screen.width >= 1028) {
+      setShowAllWork(true);
+    }
+  },[]);
   
   return (
     <>
@@ -25,71 +30,73 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink, 
         <p>I have years of experience with coding and web design. I was the administrator, designer, and coder for small, hobby websites in the past. I taught myself how to manage a community and all of its coding needs, including quick solutions when problems arise. Now, I am utilizing JavaScript to develop web applications. I am hoping to work on a team with great programmers.</p>
         <p>My biggest passions are designing and creating games; I am always eager to piece together all types - board games, pen and paper, and internet games alike - to test my creativity. My other outlets are writing stories and staying healthy!</p>
       </section>
-      <section className="info-section experiences" ref={experiencesLink}>
-      <h4 className="section-header"><ExperiencesIcon className="headerIcon" /> <span>experience</span></h4>
-        <ul className="experience-list">
-          {experiences.map((experience,i) => {
-            if (showAllWork || i < 2) {
-              return (
-                <li className="experience-item">
-                  <span className="bullet-bar" />
-                  <span className="bullet-icon" />
-                  <div className="experience-item-info">
-                    <a href={experience.link} target="_blank" rel="noopener noreferrer"><img src={experience.icon} alt={experience.name} className="experience-logo" /></a>
-                    <div className="experience-name"><h5>{experience.name}</h5>
-                      <span className="experience-dates">
-                        {`(${experience.startDate} - ${experience.endDate})`}
+      <div className="desktop-flex">
+        <section className="info-section experiences" ref={experiencesLink}>
+        <h4 className="section-header"><ExperiencesIcon className="headerIcon" /> <span>experience</span></h4>
+          <ul className="experience-list">
+            {experiences.map((experience,i) => {
+              if (showAllWork || i < 2) {
+                return (
+                  <li className="experience-item">
+                    <span className="bullet-bar" />
+                    <span className="bullet-icon" />
+                    <div className="experience-item-info">
+                      <a href={experience.link} target="_blank" rel="noopener noreferrer"><img src={experience.icon} alt={experience.name} className="experience-logo" /></a>
+                      <div className="experience-name"><h5>{experience.name}</h5>
+                        <span className="experience-dates">
+                          {`(${experience.startDate} - ${experience.endDate})`}
+                        </span>
+                      </div>
+                      <span className="experience-role">
+                        {experience.role}
                       </span>
-                    </div>
-                    <span className="experience-role">
-                      {experience.role}
-                    </span>
-                    <ul className="experience-tasks">
-                      {experience.tasks.map(task => (
-                        <li className="experience-task">{task}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              )
-            }
-            else {
-              return null;
-            }
-          })}
-          {!showAllWork
-            ? <button onClick={() => setShowAllWork(true)} className="show-more-experiences">(show more. . .)</button>
-            : null
-          }
-        </ul>
-      </section>
-      <section className="info-section skills" ref={skillsLink}>
-        <h4 className="section-header"><SkillsIcon className="headerIcon" /> <span>skills</span></h4>
-        {skills.map(skillStack => {
-          return(
-            <>
-              <h5>{skillStack.title}</h5>
-              <ul className="skills-list">
-                {skillStack.skills.map((skill,i) => (
-                  <li className="skill" key={i}>
-                    <div className="skills-icon-container">
-                      <skill.icon className="skill-icon" style={skill.style ? skill.style : {}}/>
-                    </div>
-                    <div className="skill-info">
-                      <span className="skill-title">{skill.name}</span>
-                      <span className="skill-description">{skill.description}</span>
+                      <ul className="experience-tasks">
+                        {experience.tasks.map(task => (
+                          <li className="experience-task">{task}</li>
+                        ))}
+                      </ul>
                     </div>
                   </li>
-                ))}
-              </ul>
-            </>
-          )})}
-      </section>
+                )
+              }
+              else {
+                return null;
+              }
+            })}
+            {!showAllWork
+              ? <button onClick={() => setShowAllWork(true)} className="show-more-experiences">(show more. . .)</button>
+              : null
+            }
+          </ul>
+        </section>
+        <section className="info-section skills" ref={skillsLink}>
+          <h4 className="section-header"><SkillsIcon className="headerIcon" /> <span>skills</span></h4>
+          {skills.map(skillStack => {
+            return(
+              <>
+                <h5>{skillStack.title}</h5>
+                <ul className="skills-list">
+                  {skillStack.skills.map((skill,i) => (
+                    <li className="skill" key={i}>
+                      <div className="skills-icon-container">
+                        <skill.icon className="skill-icon" style={skill.style ? skill.style : {}}/>
+                      </div>
+                      <div className="skill-info">
+                        <span className="skill-title">{skill.name}</span>
+                        <span className="skill-description">{skill.description}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )})}
+        </section>
+      </div>
       <section className="info-section projects" ref={projectsLink}>
         <h4 className="section-header"><ProjectsIcon className="headerIcon" /> <span>projects</span></h4>
         <ul className="project-list">
           {projects.map(project => (
-            <li className="project-list">
+            <li className="project-list-item">
               <div className="screenshot-container-behind">
                 <img src={project.screenshot} alt={project.name} className="screenshotBehind"/>
               </div>

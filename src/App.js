@@ -3,7 +3,7 @@ import './reset.css';
 import './App.css';
 import InitialSplash from './components/InitialSplash';
 import Main from './components/Main';
-import { headerIcons, skills } from './assets/data';
+import { headerIcons } from './assets/data';
 
 function App() {
 
@@ -20,8 +20,23 @@ function App() {
   const linkRefs = {aboutLink: useRef(null), experiencesLink: useRef(null), skillsLink: useRef(null), projectsLink: useRef(null), resumeLink: useRef(null)};
 
   useEffect(() => {
-      setTimeout(() => headerRef.current.classList.add('zero-to-hundred-opacity'), 300)
-      window.addEventListener('scroll',() => checkForScroll(),true)
+      const {aboutLink, experiencesLink, skillsLink, projectsLink, resumeLink} = linkRefs;
+      setTimeout(() => headerRef.current.classList.add('zero-to-hundred-opacity'), 300);
+      if (window.scrollY > window.screen.height / 2 ) {
+        setRevealedResume(true);
+        setRevealedProjects(true);
+        setRevealedSkills(true);
+        setRevealedExperiences(true);
+        setRevealedAbout(true);
+        resumeLink.current.classList.add('zero-to-hundred-opacity-slow');
+        projectsLink.current.classList.add('zero-to-hundred-opacity-slow');
+        skillsLink.current.classList.add('zero-to-hundred-opacity-slow');
+        experiencesLink.current.classList.add('zero-to-hundred-opacity-slow');
+        aboutLink.current.classList.add('zero-to-hundred-opacity');
+      }
+      else {
+        window.addEventListener('scroll',() => checkForScroll(),true);
+      }
   },[])
 
   const checkForScroll = () => {
@@ -61,7 +76,7 @@ function App() {
   return (
     <div className="App" 
       ref={appRef}>
-      <header className="header" ref={headerRef}>
+      <header className="header" ref={headerRef} onTouchStart={() => setHeaderExpanded(true)}>
         {!headerExpanded
           ? <div className="headedContracted" ref={contractedHeader} onMouseOver={() => setHeaderExpanded(true)}>leon dail</div>
           : <ul className="headerExpanded" ref={expandedHeader} onMouseLeave={() => setHeaderExpanded(false)}>

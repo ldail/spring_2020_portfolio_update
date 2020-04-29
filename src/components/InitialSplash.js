@@ -7,7 +7,7 @@ import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
 import { GITHUB_LINK, LINKEDIN_LINK, EMAIL_LINK } from '../assets/data';
 
 
-const InitialSplash = ({delayAnimationCount}) => {
+const InitialSplash = () => {
   const splashRef = useRef(null);
   const splashInfoRef = useRef(null);
   const firstHeaderRoleRef = useRef(null);
