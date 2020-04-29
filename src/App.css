@@ -1,17 +1,17 @@
 html, body {
   height: 100vh;
-  width: 100vw;
+  width: 95vw;
   background-color: black;
   color: white;
 }
 
 @font-face{ 
-	font-family: 'StoryBook';
+  font-family: 'StoryBook';
 	src: url('./assets/fonts/StoryBook/StoryBook.eot');
-	src: url('./assets/fonts/StoryBook/StoryBook.eot?#iefix') format('embedded-opentype'),
+  src: url('./assets/fonts/StoryBook/StoryBook.eot?#iefix') format('embedded-opentype'),
+       url('./assets/fonts/StoryBook/StoryBook.svg#StoryBook') format('svg'),
 	     url('./assets/fonts/StoryBook/StoryBook.woff') format('woff'),
-	     url('./assets/fonts/StoryBook/StoryBook.ttf') format('truetype'),
-	     url('./assets/fonts/StoryBook/StoryBook.svg#StoryBook') format('svg');
+	     url('./assets/fonts/StoryBook/StoryBook.ttf') format('truetype');
 }
 
 .App {
@@ -95,6 +95,8 @@ p {
     opacity: 1.0;
   }
 }
+
+/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -136,8 +138,9 @@ p {
   font-size: 15px;
 }
 
+/* Splash */
 #InitialSplash {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,9 +156,11 @@ p {
   color: #ff8a00;
   background-image: linear-gradient(to right, #ff8a00 0%, #da1b60 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
   overflow: visible;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 #InitialSplash h2 {
@@ -166,13 +171,13 @@ p {
 }
 
 #InitialSplash .headshot-container {
-  height: 50vh;
-  max-height: 50vh;
+  height: 45vh;
+  max-height: 45vh;
 }
 
 #InitialSplash .headshot {
   border-radius: 50%;
-  max-height: 50vh;
+  max-height: 45vh;
   margin: 0 auto;
 }
 
@@ -191,8 +196,11 @@ p {
   color: #ff8a00;
   background-image: linear-gradient(to right, #ff8a00 0%, #da1b60 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+  overflow: visible;
+  color: white;
 }
 
 .splash-info h3 span {
@@ -273,7 +281,7 @@ p {
 
 /* About Me */
 .about-me {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .about-me h5 {
@@ -669,6 +677,16 @@ p {
   .skills, .experiences {
     width: 45%;
     flex: 1;
+  }
+
+  .contact-link-list svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-link-list .externalClickIcon {
+    width: 20px;
+    height: 20px;
   }
   
 }

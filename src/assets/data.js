@@ -164,7 +164,12 @@ export const experiences = [
     startDate: `Mar '20`,
     endDate: `Present`,
     role: `Software Engineer Intern`,
-    tasks: [`Worked hard`, `Frontend stuff`]
+    tasks: [
+      `Developed software in a production environment`,
+      `Redesign of front-end product`,
+      `Rearchitect state management utilities`,
+      `Full-time position employing Agile methodology`
+    ]
   },
   {
     name: `Thinkful, Inc.`,

@@ -55,7 +55,7 @@ const InitialSplash = () => {
       <div className="splash-info" ref={splashInfoRef}>
         <h1 ref={nameRef}>leon dail</h1>
         <h2 ref={roleRef}><span className="header-role-one" ref={firstHeaderRoleRef}>{firstHeaderRoleText}</span> <span className="header-role-two" ref={secondHeaderRoleRef}>{secondHeaderRoleText}</span></h2>
-        <h3 ref={locationRef}><span>Based in sunny San Diego, CA</span></h3>
+        <h3 ref={locationRef}>Based in sunny San Diego, CA</h3>
         
         <ul className="contact-link-list" ref={contactLinkListRef}>
           <li className="externalGithubLink">

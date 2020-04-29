@@ -8,6 +8,7 @@ import {ReactComponent as ResumeIcon} from '../assets/resume-icon.svg';
 import {ReactComponent as SiteLinkIcon} from '../assets/link-solid.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-brands.svg';
 import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
+import resume from '../assets/Leon_Dail__Software_Engineer__Resume.pdf';
 
 
 const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink, resumeLink}}) => {
@@ -142,7 +143,7 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink, 
         <h4 className="section-header"><ResumeIcon className="headerIcon" /> <span>resume</span></h4>
         <p>If you would like a printer-friendly copy of my resume, please click the link below.</p>
         <p>Thank you!</p>
-        <a href="#"><button type="button" className="resume-button">Download Resume</button></a>
+        <a href={resume} target="_blank" rel="noopener noreferrer"><button type="button" className="resume-button">Download Resume</button></a>
       </section>
     </>
   );
