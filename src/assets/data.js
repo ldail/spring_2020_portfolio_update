@@ -2,14 +2,32 @@ import {ReactComponent as AboutMeIcon} from '../assets/address-card-regular.svg'
 import {ReactComponent as ExperiencesIcon} from '../assets/briefcase-solid.svg';
 import {ReactComponent as SkillsIcon} from '../assets/tools-solid.svg';
 import {ReactComponent as ProjectsIcon} from '../assets/project-diagram-solid.svg';
+import {ReactComponent as ResumeIcon} from '../assets/resume-icon.svg';
 import elInstrumentoScreenshot from '../assets/ElInstrumento-screenshot.png';
 import directMeScreenshot from '../assets/DirectMe-screenshot.png';
 import ultimateClothingSceenshot from '../assets/UltimateClothing-screenshot.png';
 import nowPlayingScreenshot from '../assets/NowPlayingLive-screenshot.png';
-import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
 import kituSystemsIcon from '../assets/kitu-systems-icon.png';
 import thinkfulIcon from '../assets/thinkful-icon.jpg'
 import weathervaneIcon from '../assets/weathervane-icon.png';
+import {ReactComponent as WebDevelopmentIcon} from '../assets/skills-icons/web-development-icon.svg';
+import {ReactComponent as ReactIcon} from '../assets/skills-icons/react-icon.svg';
+import {ReactComponent as ReduxIcon } from '../assets/skills-icons/redux-icon.svg';
+import {ReactComponent as JQueryIcon} from '../assets/skills-icons/jQuery-icon.svg';
+import {ReactComponent as EnzymeIcon} from '../assets/skills-icons/enzyme-icon.svg'
+import {ReactComponent as NodeJsIcon} from '../assets/skills-icons/nodeJs-icon.svg'
+import {ReactComponent as ExpressIcon } from '../assets/skills-icons/express-icon.svg';
+import {ReactComponent as DatabasesIcon} from '../assets/skills-icons/databases-icon.svg';
+import {ReactComponent as MochaIcon} from '../assets/skills-icons/mocha-icon.svg';
+import {ReactComponent as GitIcon } from '../assets/skills-icons/git-icon.svg'
+import {ReactComponent as HerokuIcon} from '../assets/skills-icons/heroku-icon.svg'
+import {ReactComponent as PhotoshopIcon} from '../assets/skills-icons/photoshop-icon.svg'
+import {ReactComponent as DevToolsIcon} from '../assets/skills-icons/devTools-icon.svg'
+
+
+
+
+
 
 export const projects = [
   {
@@ -52,28 +70,31 @@ export const skills = [
     skills: [
       {
         name: `Web Design & Development`,
-        description: `Semantic & Accessible HTML5, CSS3 and SCSS, JavaScript`,
-        icon: LinkArrow
+        description: `Responsive, Semantic, & Accessible HTML5, CSS3 and SCSS, JavaScript`,
+        icon: WebDevelopmentIcon,
+        style: {color: '#e7ed1f'}
       },
       {
         name: `React`,
         description: `React Classes, Hooks, Contect API`,
-        icon: LinkArrow
+        icon: ReactIcon,
+        style: {color: '#1fd1ed'}
       },
       {
         name: `Redux`,
         description: `React with Redux State Management`,
-        icon: LinkArrow
+        icon: ReduxIcon
       },
       {
         name: `jQuery`,
         description: `JavaScript library`,
-        icon: LinkArrow
+        icon: JQueryIcon,
+        style: {color: '#1694cb'}
       },
       {
         name: `Enzyme`,
         description: `Unit Testing`,
-        icon: LinkArrow
+        icon: EnzymeIcon
       }
     ]
   },
@@ -83,22 +104,25 @@ export const skills = [
       {
         name: `Node.js`,
         description: `Back-end JavaScript Development`,
-        icon: LinkArrow
+        icon: NodeJsIcon,
+        style: {color: '#3ba442'}
       },
       {
         name: `Express.js`,
         description: `Node.js framework`,
-        icon: LinkArrow
+        icon: ExpressIcon,
+        style: {color: '#bdbdbd'}
       },
       {
         name: `Relational Databases`,
         description: `PostgreSQL & MySQL with RESTful APIs`,
-        icon: LinkArrow
+        icon: DatabasesIcon,
+        style: {color: '#c17ad6'}
       },
       {
         name: `Mocha & Chai`,
         description: `Unit & Integration Testing`,
-        icon: LinkArrow
+        icon: MochaIcon
       }
     ]
   },
@@ -108,22 +132,25 @@ export const skills = [
       {
         name: `Flow Control and Production Environment`,
         description: `Git, GitHub, BitBucket, Jira`,
-        icon: LinkArrow
+        icon: GitIcon,
+        style: {color: '#ed3909'}
       },
       {
         name: `Deployment`,
         description: `Heroku, Zeit, GitHub Pages`,
-        icon: LinkArrow
+        icon: HerokuIcon
       },
       {
-        name: `Design with Adobe Photoshop`,
-        description: `Website mock-ups and editing`,
-        icon: LinkArrow
+        name: `Adobe Photoshop`,
+        description: `Design, mock-ups and editing`,
+        icon: PhotoshopIcon,
+        style: {color: '#043ddf'}
       },
       {
         name: `Developer Tools and Packages`,
         description: `Browser DevTools and NPM`,
-        icon: LinkArrow
+        icon: DevToolsIcon,
+        style: {color: '#14ff94'}
       }
     ]
   }
@@ -184,6 +211,10 @@ export const headerIcons = [
   {
     name: `projects`,
     icon: ProjectsIcon
+  },
+  {
+    name: `resume`,
+    icon: ResumeIcon
   }
 ]
 

@@ -24,6 +24,7 @@ html, body {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 30px;
 }
 
 .header {
@@ -159,12 +160,12 @@ p {
 
 #InitialSplash .headshot-container {
   height: 50vh;
-  width: 80%;
+  max-height: 50vh;
 }
 
 #InitialSplash .headshot {
-  width: 80vw;
   border-radius: 50%;
+  max-height: 50vh;
 }
 
 #InitialSplash .splash-info {
@@ -261,6 +262,10 @@ p {
 
 .info-section:not(:first-of-type) {
   margin-top: 60px;
+}
+
+.info-section:last-of-type {
+  margin-top: 0px;
 }
 .section-header {
   display: flex;
@@ -453,8 +458,39 @@ p {
   overflow: hidden;
   position: relative;
   border-radius: 5%;
-
 }
+
+.screenshot-container-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenshot-container-original:hover .screenshot-container-overlay {
+  cursor: pointer;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.hover-link-icon {
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 4;
+  color: white;
+  align-self: center;
+}
+
+.screenshot-container-original:hover .screenshot-container-overlay .hover-link-icon {
+  opacity: 0.7;
+}
+
 
 .screenshot-container-behind img {
   margin-top: -20px;
@@ -514,4 +550,22 @@ p {
   margin-right: 7px;
   text-transform: uppercase;
   color: white;
+}
+
+/* Resume */
+
+.resume h4 {
+  margin-bottom: 15px;
+}
+
+.resume-button {
+  display: block;
+  background-color: white;
+  border: 1px solid #666;
+  padding: 10px;
+}
+
+.resume-button:hover {
+  background-color: white;
+  color: #ff8a00;
 }

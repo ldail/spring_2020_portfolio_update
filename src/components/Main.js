@@ -4,12 +4,13 @@ import {ReactComponent as AboutMeIcon} from '../assets/address-card-regular.svg'
 import {ReactComponent as ExperiencesIcon} from '../assets/briefcase-solid.svg';
 import {ReactComponent as SkillsIcon} from '../assets/tools-solid.svg';
 import {ReactComponent as ProjectsIcon} from '../assets/project-diagram-solid.svg';
+import {ReactComponent as ResumeIcon} from '../assets/resume-icon.svg';
 import {ReactComponent as SiteLinkIcon} from '../assets/link-solid.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-brands.svg';
 import {ReactComponent as LinkArrow} from '../assets/arrow-up-solid.svg';
 
 
-const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}) => {
+const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink, resumeLink}}) => {
   const [showAllWork, setShowAllWork] = useState(false);
 
   
@@ -72,7 +73,7 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
                 {skillStack.skills.map((skill,i) => (
                   <li className="skill" key={i}>
                     <div className="skills-icon-container">
-                      <skill.icon className="skill-icon" />
+                      <skill.icon className="skill-icon" style={skill.style ? skill.style : {}}/>
                     </div>
                     <div className="skill-info">
                       <span className="skill-title">{skill.name}</span>
@@ -94,6 +95,11 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
               </div>
               <div className="screenshot-container-original">
                 <a href={project.link} target="_blank" rel='noreferrer noopener'><img src={project.screenshot} alt={project.name} className="screenshotOriginal"/></a>
+                <a href={project.link} target="_blank" rel='noreferrer noopener'>
+                  <div className="screenshot-container-overlay">
+                    <SiteLinkIcon className="hover-link-icon" />
+                  </div>
+                </a>
               </div>
               <h5>{project.name}</h5>
               <ul className="project-links-list">
@@ -124,6 +130,12 @@ const Main = ({linkRefs: {aboutLink, experiencesLink, projectsLink, skillsLink}}
             </li>
           ))}
         </ul>
+      </section>
+      <section className="info-section resume" ref={resumeLink}>
+        <h4 className="section-header"><ResumeIcon className="headerIcon" /> <span>resume</span></h4>
+        <p>If you would like a printer-friendly copy of my resume, please click the link below.</p>
+        <p>Thank you!</p>
+        <a href="#"><button type="button" className="resume-button">Download Resume</button></a>
       </section>
     </>
   );

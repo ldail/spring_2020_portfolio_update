@@ -16,7 +16,8 @@ function App() {
   const [revealedExperiences, setRevealedExperiences] = useState(false);
   const [revealedSkills, setRevealedSkills] = useState(false);
   const [revealedProjects, setRevealedProjects] = useState(false);
-  const linkRefs = {aboutLink: useRef(null), experiencesLink: useRef(null), skillsLink: useRef(null), projectsLink: useRef(null)};
+  const [revealedResume, setRevealedResume] = useState(false);
+  const linkRefs = {aboutLink: useRef(null), experiencesLink: useRef(null), skillsLink: useRef(null), projectsLink: useRef(null), resumeLink: useRef(null)};
 
   useEffect(() => {
       setTimeout(() => headerRef.current.classList.add('zero-to-hundred-opacity'), 300)
@@ -24,7 +25,13 @@ function App() {
   },[])
 
   const checkForScroll = () => {
-    const {aboutLink, experiencesLink, skillsLink, projectsLink} = linkRefs;
+    const {aboutLink, experiencesLink, skillsLink, projectsLink, resumeLink} = linkRefs;
+    if (!revealedResume) {
+      if (window.screen.height + window.scrollY > projectsLink.current.offsetTop - 100) {
+        setRevealedResume(true);
+        resumeLink.current.classList.add('zero-to-hundred-opacity-slow');
+      }
+    }
     if (!revealedProjects) {
       if (window.screen.height + window.scrollY > projectsLink.current.offsetTop + 100) {
         setRevealedProjects(true);
